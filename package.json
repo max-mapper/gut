@@ -1,5 +1,5 @@
 {
   "name": "gut",
-  "scripts": { "test": "node test/csv.js" }, // TODO dynamically run ALL the tests!
+  "scripts": { "test": "node test/csv.js" }, 
   "version": "0.0.1"
 }
