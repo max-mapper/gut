@@ -1,6 +1,6 @@
 `gut` is a way to use publicly hosted web services to convert data between different formats
 
-A gut web service has the following attributes:
+A gut web service (essentially a [WebHook](http://wiki.webhooks.org/w/page/13385124/FrontPage)) has the following attributes:
 
   * accepts POST data containing a file or other data (such as CSV)
   * turns the incoming data into some other data format (e.g. an array of JSON objects)
