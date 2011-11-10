@@ -1,5 +1,16 @@
 {
   "name": "gut",
-  "scripts": { "test": "node test/csv.js" }, 
-  "version": "0.0.1"
+  "subdomain": "gutcsv",
+  "start": "csv-server.js",
+  "scripts": {
+    "test": "node test/csv.js",
+    "start": "csv-server.js"
+  },
+  "version": "0.0.1-2",
+  "dependencies": {
+    "csv": "0.0.x",
+    "async": "0.1.x",
+    "request": "2.1.x",
+    "underscore": "1.1.x"
+  }
 }
