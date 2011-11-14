@@ -1,10 +1,10 @@
 {
-  "name": "gut",
-  "subdomain": "gutcsv",
-  "start": "csv-server.js",
+  "name": "csv-to-json",
+  "subdomain": "csvtojson",
+  "start": "server.js",
   "scripts": {
-    "test": "node test/csv.js",
-    "start": "csv-server.js"
+    "test": "node ../test/csv-to-json.js",
+    "start": "server.js"
   },
   "version": "0.0.1-2",
   "dependencies": {

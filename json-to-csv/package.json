@@ -1,0 +1,16 @@
+{
+  "name": "json-to-csv",
+  "subdomain": "jsontocsv",
+  "start": "server.js",
+  "scripts": {
+    "test": "node ../test/json-to-csv.js",
+    "start": "server.js"
+  },
+  "version": "0.0.1",
+  "dependencies": {
+    "csv": "0.0.x",
+    "async": "0.1.x",
+    "request": "2.1.x",
+    "underscore": "1.1.x"
+  }
+}

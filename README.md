@@ -33,6 +33,6 @@ My server (cat-information.com) will receive the following HTTP POST:
 
     {"headers":[{"name":"name"},{"name":"appearance"}],"rows":[{"name":"chewbacca","appearance":"hairy"},{"name":"bill","appearance":"nonplussed"},{"name":"bubbles","appearance":"relaxed"}]}
 
-currently only a CSV gut service is implemented, but you are encouraged to fork and add your own simple gut servers for common open data transformation formats. some useful ones might include:
+currently only a CSV and JSON related gut servicesare implemented, but you are encouraged to fork and add your own simple gut servers for common open data transformation formats. some useful ones might include:
 
 MSOffice (.xls, .xlxs, .doc, .docx etc), ESRI Shapefiles and File GeoDatabases (.shp), SQL dumps (.sql), Address geocoder to lat/lng ("123 fake street")
