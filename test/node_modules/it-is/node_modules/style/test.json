@@ -1,0 +1,9 @@
+{ "name" :"style"
+, "author": "dominictarr"
+, "tests": 
+    { "style": 
+      { "test": "style/test/style.expresso"
+      , "target": "style"
+      }
+    }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "xls-to-json",
+  "subdomain": "xlstojson",
+  "start": "server.js",
+  "scripts": {
+    "test": "node ../test/xls-to-json.js",
+    "start": "server.js"
+  },
+  "version": "0.0.1-2",
+  "dependencies": {
+    "xml2json": "0.2.4",
+    "async": "0.1.x",
+    "request": "2.1.x",
+    "underscore": "1.1.x"
+  }
+}
