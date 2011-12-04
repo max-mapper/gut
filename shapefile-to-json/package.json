@@ -1,0 +1,11 @@
+{
+    "name" : "shapefile-to-json",
+    "subdomain" : "shapefiletojson",
+    "version" : "0.0.0",
+    "scripts" : {
+        "start" : "server.js"
+    },
+    "dependencies" : {
+        "shp2json" : "0.0.x"
+    }
+}
