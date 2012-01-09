@@ -6,6 +6,6 @@
         "start" : "server.js"
     },
     "dependencies" : {
-        "shp2json" : "0.0.x"
+        "shp2json" : "x.x.x"
     }
 }
