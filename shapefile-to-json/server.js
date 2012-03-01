@@ -4,6 +4,7 @@ var fs = require('fs');
 var toJSON = require('shp2json');
 
 http.createServer(function (req, res) {
+    var start = new Date
     res.setHeader('content-type', 'application/json');
     
     var stream = toJSON(req);
@@ -12,5 +13,8 @@ http.createServer(function (req, res) {
         res.statusCode = 500;
         res.end(err + '\n');
     });
+    stream.on('end', function() {
+      console.log((new Date - start) + 'ms')
+    })
     stream.pipe(res);
 }).listen(process.argv[2] || 80);

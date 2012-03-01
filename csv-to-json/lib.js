@@ -4,16 +4,26 @@ var vm = require('vm'),
     csv = require('csv'),
     request = require('request').defaults({json: true}),
     http = require('http'),
-    crypto = require('crypto')
+    crypto = require('crypto'),
+    stream = require('stream')
     ;
 
 module.exports = http.createServer(function (req, res) {
-  var headers, dataset, rows = [];
+  var headers, dataset;
+  
+  var jsonStream = new stream.Stream();
+  jsonStream.writeable = true;
+  jsonStream.readable = true;
+  
+  jsonStream.pipe(res)
+
+  var separator = ''
 
   csv()
   .fromStream(req)
   .on('data',function(data, index) {
     if (!headers) {
+      jsonStream.emit("data", "{\"docs\":[")
       headers = data;
       return;
     }
@@ -21,23 +31,15 @@ module.exports = http.createServer(function (req, res) {
     _(_.zip(headers, data)).each(function(tuple) {
       row[_.first(tuple)] = _.last(tuple)
     })
-    rows.push(row);
+    jsonStream.emit('data', separator + JSON.stringify(row))
+    separator = ','
   })
   .on('end', function(count) {
-    res.statusCode = 202;
-    res.end();
-    headers = _.map(headers, function(head) { return {name: head} })
-    request({uri: req.headers['x-callback'], method: "POST", body: {headers: headers, rows: rows}}, function(e,r,b) {
-      if (e) console.log('upload error on ' + dataset + ': ' + e);
-    });
+    jsonStream.emit('data', "]}")
+    jsonStream.emit('end')
   })
-  .on('error',function(error){
-    console.log("csv error!", error.message);
+  .on('error',function(error) {
+    jsonStream.emit('error', error)
+    console.log('csv error', error.message);
   });
 })
-
-// sandbox = {
-//   animal: 'cat',
-//   count: 2
-// };
-// vm.runInNewContext('count += 1; name = "kitty"', sandbox, 'myfile.vm');

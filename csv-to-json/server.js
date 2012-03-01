@@ -1,1 +1,1 @@
-require('./lib').listen(80)
+require('./lib').listen(process.argv[2] || 80)
