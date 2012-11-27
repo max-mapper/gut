@@ -41,3 +41,5 @@ Want to contribute?  Please consider adding more gutters:
   * MSOffice (.doc, .docx etc)
   * SQL dumps (.sql)
   * Address geocoder to lat/lng ("123 fake street")
+
+### BSD LICENSE
